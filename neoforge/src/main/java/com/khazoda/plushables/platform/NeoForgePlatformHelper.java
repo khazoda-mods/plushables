@@ -1,11 +1,10 @@
-package com.khazoda.plushables.platform;
+package com.example.examplemod.platform;
 
-import com.khazoda.plushables.Constants;
-import com.khazoda.plushables.platform.services.IPlatformHelper;
+import com.example.examplemod.Constants;
+import com.example.examplemod.platform.services.IPlatformHelper;
 import com.khazoda.baseline.KhazConfig;
 import com.khazoda.baseline.KhazConfigSyncNeoForge;
 import net.neoforged.fml.ModList;
-import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
 
@@ -36,9 +35,5 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
   @Override
   public void registerServerConfigSync(KhazConfig config) {
     KhazConfigSyncNeoForge.registerServerConfigSync(config, Constants.CONFIG_SYNC);
-  }
-  @Override
-  public boolean isClientSide() {
-    return FMLEnvironment.getDist().isClient();
   }
 }
