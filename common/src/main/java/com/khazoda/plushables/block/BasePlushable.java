@@ -18,7 +18,6 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
@@ -74,7 +73,7 @@ public abstract class BasePlushable extends Block implements SimpleWaterloggedBl
   }
 
   public BasePlushable(Properties settings, TooltipData tooltipData, InteractionEffectData effectData) {
-    super(settings.lightLevel((blockState) -> effectData.lightLevel()));
+    super(settings.lightLevel((blockState) -> effectData.lightLevel()).bounceRestitution(0.4F));
     this.effectData = effectData;
     this.tooltipData = tooltipData;
     registerDefaultState(this.stateDefinition.any().setValue(ON_COOLDOWN, false).setValue(ATTACHMENT, Direction.UP).setValue(ROTATION, 0).setValue(WATERLOGGED, false));
@@ -275,23 +274,6 @@ public abstract class BasePlushable extends Block implements SimpleWaterloggedBl
   @Override
   public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
     super.fallOn(level, state, pos, entity, fallDistance * 0.5F);
-  }
-
-  @Override
-  public void updateEntityMovementAfterFallOn(BlockGetter level, Entity entity) {
-    if (entity.isSuppressingBounce()) {
-      super.updateEntityMovementAfterFallOn(level, entity);
-    } else {
-      this.bounceUp(entity);
-    }
-  }
-
-  private void bounceUp(Entity entity) {
-    Vec3 movement = entity.getDeltaMovement();
-    if (movement.y < 0.0D) {
-      double multiplier = entity instanceof LivingEntity ? 1.0D : 0.8D;
-      entity.setDeltaMovement(movement.x, -movement.y * 0.33D * multiplier, movement.z);
-    }
   }
 
   /* ==========[ BlockState ]========== */

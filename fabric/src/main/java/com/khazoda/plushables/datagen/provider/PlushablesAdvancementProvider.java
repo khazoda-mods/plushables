@@ -7,8 +7,8 @@ import com.khazoda.plushables.item.PlushableBlockItem;
 import com.khazoda.plushables.registry.MainRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.advancements.*;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.advancements.AdvancementProvider;
@@ -16,7 +16,7 @@ import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.BlockItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 
@@ -61,7 +61,7 @@ public class PlushablesAdvancementProvider extends AdvancementProvider {
               false
           )
           .addCriterion("has_gold_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GOLD_NUGGET))
-          .addCriterion("has_flowers", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), ItemTags.FLOWERS)))
+          .addCriterion("has_flowers", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), BlockItemTags.FLOWERS.item())))
           .addCriterion("has_honey_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.HONEY_BOTTLE))
           .requirements(AdvancementRequirements.Strategy.OR)
           .rewards(AdvancementRewards.Builder.recipe(recipeKey(MainRegistry.HEART_OF_GOLD_ITEM.id())))
