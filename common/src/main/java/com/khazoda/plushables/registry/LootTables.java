@@ -1,15 +1,15 @@
 package com.khazoda.plushables.registry;
 
 import com.khazoda.plushables.PlushablesConfig;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,8 +34,10 @@ public final class LootTables {
         VILLAGE_TANNERY,
         VILLAGE_TEMPLE,
         VILLAGE_TOOLSMITH,
-        VILLAGE_WEAPONSMITH
-    ), plushList(), UniformGenerator.between(0.0F, 1.0F));
+        VILLAGE_WEAPONSMITH,
+        RUINED_PORTAL,
+        ABANDONED_CAMP_SECRET_CHEST
+    ), plushList(), ContextIntProviders.between(0, 1));
 
     putAll(List.of(
         ABANDONED_MINESHAFT,
@@ -55,9 +57,7 @@ public final class LootTables {
         ANCIENT_CITY_ICE_BOX,
         ANCIENT_CITY,
         SIMPLE_DUNGEON
-    ), List.of(MainRegistry.HEART_OF_GOLD_ITEM.get()), UniformGenerator.between(0.0F, 1.0F));
-
-    putAll(List.of(RUINED_PORTAL), plushList(), UniformGenerator.between(0.0F, 1.0F));
+    ), List.of(MainRegistry.HEART_OF_GOLD_ITEM.get()), ContextIntProviders.between(0, 1));
   }
 
   private LootTables() {
@@ -71,7 +71,7 @@ public final class LootTables {
     }
     tableBuilder.withPool(createPool(config));
     if (RUINED_PORTAL.identifier().equals(id)) {
-      tableBuilder.withPool(createPool(new LootConfig(List.of(MainRegistry.HEART_OF_GOLD_ITEM.get()), ConstantValue.exactly(1.0F))));
+      tableBuilder.withPool(createPool(new LootConfig(List.of(MainRegistry.HEART_OF_GOLD_ITEM.get()), ContextIntProviders.exactly(1))));
     }
     return true;
   }
@@ -84,7 +84,7 @@ public final class LootTables {
     return pool;
   }
 
-  private static void putAll(List<ResourceKey<LootTable>> tables, List<Item> items, NumberProvider rolls) {
+  private static void putAll(List<ResourceKey<LootTable>> tables, List<Item> items, Holder<ContextIntProvider> rolls) {
     LootConfig config = new LootConfig(items, rolls);
     for (ResourceKey<LootTable> table : tables) {
       LOOT_TABLE_CONFIGS.put(table, config);
@@ -97,6 +97,6 @@ public final class LootTables {
         .toList();
   }
 
-  private record LootConfig(List<Item> items, NumberProvider rolls) {
+  private record LootConfig(List<Item> items, Holder<ContextIntProvider> rolls) {
   }
 }

@@ -2,13 +2,10 @@ package com.khazoda.plushables.block.plushable;
 
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableDormouseBlock extends BasePlushable {
-  public static final MapCodec<PlushableDormouseBlock> CODEC = simpleCodec(PlushableDormouseBlock::new);
-
   public PlushableDormouseBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
         .number(34)
@@ -27,10 +24,5 @@ public class PlushableDormouseBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.6875, 0.0625, 0.28125, 0.75, 0.1875, 0.40625));
     shape = Shapes.or(shape, Shapes.create(0.6875, 0.0625, 0.59375, 0.75, 0.25, 0.78125));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableDormouseBlock> codec() {
-    return CODEC;
   }
 }

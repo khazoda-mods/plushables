@@ -3,14 +3,11 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableBigTaterBlock extends BasePlushable {
-  public static final MapCodec<PlushableBigTaterBlock> CODEC = simpleCodec(PlushableBigTaterBlock::new);
-
   public PlushableBigTaterBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(18)
@@ -28,10 +25,5 @@ public class PlushableBigTaterBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.125, 0.1875, 0.1875, 0.875, 0.25, 0.8125));
     shape = Shapes.or(shape, Shapes.create(0.125, 0.25, 0.125, 0.875, 1, 0.875));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableBigTaterBlock> codec() {
-    return CODEC;
   }
 }

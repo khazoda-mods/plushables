@@ -13,14 +13,15 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Prediction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
@@ -52,7 +53,7 @@ import org.jetbrains.annotations.Nullable;
  * block shapes.
  */
 public abstract class BasePlushable extends Block implements SimpleWaterloggedBlock, EntityBlock {
-  public static final Properties defaultSettings = Properties.of().sound(SoundType.WOOL).strength(0.1f).noOcclusion().pushReaction(PushReaction.DESTROY);
+  public static final Properties defaultSettings = Properties.of().sound(SoundType.WOOL).strength(0.1f).noOcclusion().bounceRestitution(0.33F).pushReaction(PushReaction.POPPED);
   public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
   public static final EnumProperty<Direction> ATTACHMENT = EnumProperty.create("attachment", Direction.class);
   public static final IntegerProperty ROTATION = IntegerProperty.create("rotation", 0, 3);
@@ -100,8 +101,11 @@ public abstract class BasePlushable extends Block implements SimpleWaterloggedBl
     ItemStack item = blockEntity.removeTheItem();
     if (item.isEmpty()) return false;
 
-    if (!player.addItem(item)) player.drop(item, false);
-    player.swing(InteractionHand.MAIN_HAND, true);
+    if (!player.addItem(item)) {
+      player.drop(item, false, Prediction.SERVER_ONLY);
+    } else {
+      player.swing(InteractionHand.MAIN_HAND, SwingAnimation.DEFAULT, true);
+    }
     playStorageEffects(serverLevel, state, pos, MainRegistry.EXTRACT_ITEM.get(), 0.6F, 1.0F);
     serverLevel.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     return true;
@@ -275,23 +279,6 @@ public abstract class BasePlushable extends Block implements SimpleWaterloggedBl
   @Override
   public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
     super.fallOn(level, state, pos, entity, fallDistance * 0.5F);
-  }
-
-  @Override
-  public void updateEntityMovementAfterFallOn(BlockGetter level, Entity entity) {
-    if (entity.isSuppressingBounce()) {
-      super.updateEntityMovementAfterFallOn(level, entity);
-    } else {
-      this.bounceUp(entity);
-    }
-  }
-
-  private void bounceUp(Entity entity) {
-    Vec3 movement = entity.getDeltaMovement();
-    if (movement.y < 0.0D) {
-      double multiplier = entity instanceof LivingEntity ? 1.0D : 0.8D;
-      entity.setDeltaMovement(movement.x, -movement.y * 0.33D * multiplier, movement.z);
-    }
   }
 
   /* ==========[ BlockState ]========== */

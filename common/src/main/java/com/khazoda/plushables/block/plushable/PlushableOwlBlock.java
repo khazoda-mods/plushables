@@ -4,13 +4,10 @@ import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
 import com.khazoda.plushables.registry.MainRegistry;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableOwlBlock extends BasePlushable {
-  public static final MapCodec<PlushableOwlBlock> CODEC = simpleCodec(PlushableOwlBlock::new);
-
   public PlushableOwlBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -32,10 +29,5 @@ public class PlushableOwlBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.75, 0.125, 0.25, 0.875, 0.6875, 0.75));
     shape = Shapes.or(shape, Shapes.create(0.375, 0, 0.3125, 0.625, 0.1875, 0.6875));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableOwlBlock> codec() {
-    return CODEC;
   }
 }

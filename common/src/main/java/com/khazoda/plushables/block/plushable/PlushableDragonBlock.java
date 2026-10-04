@@ -4,14 +4,11 @@ import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
 import com.khazoda.plushables.registry.MainRegistry;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableDragonBlock extends BasePlushable {
-  public static final MapCodec<PlushableDragonBlock> CODEC = simpleCodec(PlushableDragonBlock::new);
-
   public PlushableDragonBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(14)
@@ -35,10 +32,5 @@ public class PlushableDragonBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.3125, 0, 0.3125, 0.59375, 0.4375, 0.5625));
     shape = Shapes.or(shape, Shapes.create(0.3125, 0.3125, 0.171875, 0.59375, 0.5, 0.421875));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableDragonBlock> codec() {
-    return CODEC;
   }
 }

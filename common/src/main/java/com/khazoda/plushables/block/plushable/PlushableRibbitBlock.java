@@ -3,15 +3,12 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableRibbitBlock extends BasePlushable {
-  public static final MapCodec<PlushableRibbitBlock> CODEC = simpleCodec(PlushableRibbitBlock::new);
-
   public PlushableRibbitBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(46)
@@ -34,10 +31,5 @@ public class PlushableRibbitBlock extends BasePlushable {
     shape = Shapes.join(shape, Shapes.box(0.3125, 0, 0.40625, 0.4375, 0.125, 0.53125), BooleanOp.OR);
 
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableRibbitBlock> codec() {
-    return CODEC;
   }
 }

@@ -3,15 +3,12 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableWhaleBlock extends BasePlushable {
-  public static final MapCodec<PlushableWhaleBlock> CODEC = simpleCodec(PlushableWhaleBlock::new);
-
   public PlushableWhaleBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(24)
@@ -38,10 +35,5 @@ public class PlushableWhaleBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.25, 0.125, 0.8125, 0.75, 0.625, 0.875));
 
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableWhaleBlock> codec() {
-    return CODEC;
   }
 }

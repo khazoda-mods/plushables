@@ -31,7 +31,6 @@ final class StoredItemComponentAllowlist {
       JUKEBOX_PLAYABLE,
       LODESTONE_TRACKER,
       LORE,
-      MAP_COLOR,
       MAP_DECORATIONS,
       MAP_ID,
       MAP_POST_PROCESSING,
@@ -61,7 +60,7 @@ final class StoredItemComponentAllowlist {
   }
 
   static boolean allows(ItemStack stack, DataComponentType<?> extraAllowedComponent) {
-    return stack.getComponentsPatch().entrySet().stream()
-        .allMatch(entry -> ALLOWED_COMPONENTS.contains(entry.getKey()) || entry.getKey() == extraAllowedComponent);
+    return stack.getComponentsPatch()
+        .forget(type -> ALLOWED_COMPONENTS.contains(type) || type == extraAllowedComponent).isEmpty();
   }
 }

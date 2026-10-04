@@ -3,14 +3,11 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableFoxBlock extends BasePlushable {
-  public static final MapCodec<PlushableFoxBlock> CODEC = simpleCodec(PlushableFoxBlock::new);
-
   public PlushableFoxBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(3)
@@ -34,10 +31,5 @@ public class PlushableFoxBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.28125, 0, 0.5625, 0.34375, 0.0625, 0.6875));
     shape = Shapes.or(shape, Shapes.create(0.65625, 0, 0.5625, 0.71875, 0.0625, 0.6875));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableFoxBlock> codec() {
-    return CODEC;
   }
 }

@@ -4,14 +4,11 @@ import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
 import com.khazoda.plushables.registry.MainRegistry;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableRupertBlock extends BasePlushable {
-  public static final MapCodec<PlushableRupertBlock> CODEC = simpleCodec(PlushableRupertBlock::new);
-
   public PlushableRupertBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -40,10 +37,5 @@ public class PlushableRupertBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.3438, 0.5156, 0.1719, 0.4063, 0.5781, 0.2969));
     shape = Shapes.or(shape, Shapes.create(0.5313, 0.5156, 0.1719, 0.5938, 0.5781, 0.2969));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableRupertBlock> codec() {
-    return CODEC;
   }
 }

@@ -3,14 +3,11 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableTriceratopsBlock extends BasePlushable {
-  public static final MapCodec<PlushableTriceratopsBlock> CODEC = simpleCodec(PlushableTriceratopsBlock::new);
-
   public PlushableTriceratopsBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(9)
@@ -30,10 +27,5 @@ public class PlushableTriceratopsBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.75, 0, 0.0625, 0.9375, 0.1875, 0.375));
 
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableTriceratopsBlock> codec() {
-    return CODEC;
   }
 }

@@ -3,15 +3,12 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableOtterBlock extends BasePlushable {
-  public static final MapCodec<PlushableOtterBlock> CODEC = simpleCodec(PlushableOtterBlock::new);
-
   public PlushableOtterBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(20)
@@ -33,10 +30,5 @@ public class PlushableOtterBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.375, 0.15625, 0.0625, 0.625, 0.40625, 0.3125));
     shape = Shapes.or(shape, Shapes.create(0.390625, 0.03125, 0.15625, 0.609375, 0.28125, 0.65625));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableOtterBlock> codec() {
-    return CODEC;
   }
 }

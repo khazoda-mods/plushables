@@ -3,7 +3,6 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -11,8 +10,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableSnowieBlock extends BasePlushable {
-  public static final MapCodec<PlushableSnowieBlock> CODEC = simpleCodec(PlushableSnowieBlock::new);
-
   public PlushableSnowieBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -39,10 +36,5 @@ public class PlushableSnowieBlock extends BasePlushable {
     shape = Shapes.join(shape, Shapes.box(0.21875, 0.375, 0.21875, 0.78125, 0.5, 0.78125), BooleanOp.OR);
 
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableSnowieBlock> codec() {
-    return CODEC;
   }
 }

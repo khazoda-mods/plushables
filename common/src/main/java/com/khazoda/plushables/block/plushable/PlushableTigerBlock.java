@@ -2,13 +2,10 @@ package com.khazoda.plushables.block.plushable;
 
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableTigerBlock extends BasePlushable {
-  public static final MapCodec<PlushableTigerBlock> CODEC = simpleCodec(PlushableTigerBlock::new);
-
   public PlushableTigerBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
         .number(38)
@@ -23,10 +20,5 @@ public class PlushableTigerBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.359375, 0, 0.28125, 0.65625, 0.3125, 0.71875));
     shape = Shapes.or(shape, Shapes.create(0.40625, 0.3125, 0.28125, 0.59375, 0.5, 0.5));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableTigerBlock> codec() {
-    return CODEC;
   }
 }

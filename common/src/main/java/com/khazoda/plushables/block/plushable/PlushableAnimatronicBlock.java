@@ -3,14 +3,11 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableAnimatronicBlock extends BasePlushable {
-  public static final MapCodec<PlushableAnimatronicBlock> CODEC = simpleCodec(PlushableAnimatronicBlock::new);
-
   public PlushableAnimatronicBlock(Properties settings) {
     super(settings, TooltipDataBuilder.create()
             .number(29)
@@ -31,10 +28,5 @@ public class PlushableAnimatronicBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.40625, 0, 0.46875, 0.59375, 0.421875, 0.59375));
     shape = Shapes.or(shape, Shapes.create(0.40625, 0, 0.4375, 0.59375, 0.03125, 0.625));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableAnimatronicBlock> codec() {
-    return CODEC;
   }
 }

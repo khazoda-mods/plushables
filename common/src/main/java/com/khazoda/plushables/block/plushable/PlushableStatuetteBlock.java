@@ -3,15 +3,12 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableStatuetteBlock extends BasePlushable {
-  public static final MapCodec<PlushableStatuetteBlock> CODEC = simpleCodec(PlushableStatuetteBlock::new);
-
   public PlushableStatuetteBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -35,10 +32,5 @@ public class PlushableStatuetteBlock extends BasePlushable {
     VoxelShape shape = Shapes.empty();
     shape = Shapes.or(shape, Shapes.box(0.40625, 0, 0.375, 0.59375, 0.75, 0.5));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableStatuetteBlock> codec() {
-    return CODEC;
   }
 }

@@ -4,14 +4,11 @@ import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
 import com.khazoda.plushables.registry.MainRegistry;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushableStonelingBlock extends BasePlushable {
-  public static final MapCodec<PlushableStonelingBlock> CODEC = simpleCodec(PlushableStonelingBlock::new);
-
   public PlushableStonelingBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -37,10 +34,5 @@ public class PlushableStonelingBlock extends BasePlushable {
     shape = Shapes.join(shape, Shapes.box(0.75, 0.5625, 0.34375, 0.9375, 1, 0.59375), BooleanOp.OR);
 
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushableStonelingBlock> codec() {
-    return CODEC;
   }
 }

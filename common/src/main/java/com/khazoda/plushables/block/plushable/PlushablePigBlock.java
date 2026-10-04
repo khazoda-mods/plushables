@@ -3,14 +3,11 @@ package com.khazoda.plushables.block.plushable;
 import com.khazoda.plushables.block.BasePlushable;
 import com.khazoda.plushables.block.interaction.InteractionEffectBuilder;
 import com.khazoda.plushables.block.tooltip.TooltipDataBuilder;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PlushablePigBlock extends BasePlushable {
-  public static final MapCodec<PlushablePigBlock> CODEC = simpleCodec(PlushablePigBlock::new);
-
   public PlushablePigBlock(Properties settings) {
     super(settings,
         TooltipDataBuilder.create()
@@ -34,10 +31,5 @@ public class PlushablePigBlock extends BasePlushable {
     shape = Shapes.or(shape, Shapes.create(0.34375, 0.003125, 0.03125, 0.65625, 0.315625, 0.21875));
     shape = Shapes.or(shape, Shapes.create(0.421875, 0.0625, -0.03125, 0.578125, 0.15625, 0.03125));
     return shape;
-  }
-
-  @Override
-  protected MapCodec<PlushablePigBlock> codec() {
-    return CODEC;
   }
 }
