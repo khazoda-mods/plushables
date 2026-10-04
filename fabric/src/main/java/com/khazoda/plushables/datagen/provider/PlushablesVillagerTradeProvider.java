@@ -15,9 +15,9 @@ import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.TradeCost;
 import net.minecraft.world.item.trading.VillagerTrade;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
@@ -40,16 +40,13 @@ public class PlushablesVillagerTradeProvider extends FabricCodecDataProvider<Vil
   }
 
   private static VillagerTrade createTrade(BlockEntry<BasePlushable, PlushableBlockItem> plushable) {
-    return new VillagerTrade(
+    return new VillagerTrade.Builder(
         new TradeCost(Items.EMERALD, PLUSHABLE_EMERALD_COST),
-        Optional.empty(),
         new ItemStackTemplate(plushable.item().get()),
-        PLUSHABLE_MAX_USES,
-        PLUSHABLE_VILLAGER_XP,
-        PLUSHABLE_PRICE_MULTIPLIER,
-        Optional.empty(),
-        List.of()
-    );
+        ContextIntProviders.exactly(PLUSHABLE_MAX_USES),
+        ContextIntProviders.exactly(PLUSHABLE_VILLAGER_XP),
+        ContextFloatProviders.exactly(PLUSHABLE_PRICE_MULTIPLIER)
+    ).build();
   }
 
   @Override
