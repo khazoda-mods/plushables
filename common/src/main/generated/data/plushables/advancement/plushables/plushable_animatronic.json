@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_conductor",
+  "criteria": {
+    "plushable_animatronic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_animatronic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_animatronic"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_animatronic"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_animatronic"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_animatronic"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_ribbit",
+  "criteria": {
+    "plushable_creaky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_creaky"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_creaky"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_creaky"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_creaky"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_creaky"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

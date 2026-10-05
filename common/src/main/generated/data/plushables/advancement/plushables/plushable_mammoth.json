@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_statuette",
+  "criteria": {
+    "plushable_mammoth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_mammoth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_mammoth"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_mammoth"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_mammoth"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_mammoth"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

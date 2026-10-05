@@ -24,7 +24,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class PlushablesAdvancementProvider extends FabricAdvancementProvider {
-  private static final int PLUSHABLES_PER_ADVANCEMENT = 5;
   private static final Identifier BACKGROUND = Identifier.withDefaultNamespace("block/light_gray_wool");
 
   public PlushablesAdvancementProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
@@ -82,31 +81,29 @@ public class PlushablesAdvancementProvider extends FabricAdvancementProvider {
         .build(Constants.ID("plushables/heart_of_gold"));
     output.accept(heartOfGold);
 
-    for (int start = 0; start < plushables.size(); start += PLUSHABLES_PER_ADVANCEMENT) {
-      int end = Math.min(start + PLUSHABLES_PER_ADVANCEMENT, plushables.size());
-      List<BlockEntry<BasePlushable, PlushableBlockItem>> group = plushables.subList(start, end);
-      Advancement.Builder builder = Advancement.Builder.advancement()
-          .parent(heartOfGold)
+    // one advancement per plushable, grouped in rows of 5
+    AdvancementHolder previous = heartOfGold;
+    for (int index = 0; index < plushables.size(); index++) {
+      var plushable = plushables.get(index);
+      Component name = Component.translatable(plushable.get().getDescriptionId());
+      AdvancementHolder advancement = Advancement.Builder.advancement()
+          .parent(index % 5 == 0 ? heartOfGold : previous)
           .display(
-              group.getFirst().item().get(),
-              Component.translatable("advancements.plushables.collection.title", start + 1, end),
-              Component.translatable("advancements.plushables.collection.description", start + 1, end),
+              plushable.item().get(),
+              name,
+              Component.translatable("advancements.plushables.collect.description", name),
               AdvancementType.TASK,
               true,
-              true,
+              false,
               false
           )
-          .requirements(AdvancementRequirements.Strategy.AND);
-
-      for (BlockEntry<BasePlushable, PlushableBlockItem> plushable : group) {
-        builder.addCriterion(
-            plushable.item().id().getPath(),
-            InventoryChangeTrigger.TriggerInstance.hasItems(plushable.item().get())
-        );
-      }
-
-      int advancementNumber = (start / PLUSHABLES_PER_ADVANCEMENT) + 1;
-      output.accept(builder.build(Constants.ID("plushables/collection_%02d".formatted(advancementNumber))));
+          .addCriterion(
+              plushable.item().id().getPath(),
+              InventoryChangeTrigger.TriggerInstance.hasItems(plushable.item().get())
+          )
+          .build(Constants.ID("plushables/" + plushable.item().id().getPath()));
+      output.accept(advancement);
+      previous = advancement;
     }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_fox",
+  "criteria": {
+    "plushable_clucky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_clucky"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_clucky"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_clucky"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_clucky"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_clucky"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

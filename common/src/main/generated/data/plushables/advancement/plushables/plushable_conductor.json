@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_trater",
+  "criteria": {
+    "plushable_conductor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_conductor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_conductor"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_conductor"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_conductor"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_conductor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

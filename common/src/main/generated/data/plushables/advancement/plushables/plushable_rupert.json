@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_raptor",
+  "criteria": {
+    "plushable_rupert": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_rupert"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_rupert"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_rupert"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_rupert"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_rupert"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

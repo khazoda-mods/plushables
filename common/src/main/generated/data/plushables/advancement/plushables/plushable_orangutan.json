@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_whale",
+  "criteria": {
+    "plushable_orangutan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_orangutan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_orangutan"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_orangutan"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_orangutan"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_orangutan"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

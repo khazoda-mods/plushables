@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_goldfish",
+  "criteria": {
+    "plushable_trater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_trater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_trater"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_trater"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_trater"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_trater"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

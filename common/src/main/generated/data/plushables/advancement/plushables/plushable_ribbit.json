@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/heart_of_gold",
+  "criteria": {
+    "plushable_ribbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_ribbit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_ribbit"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_ribbit"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_ribbit"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_ribbit"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

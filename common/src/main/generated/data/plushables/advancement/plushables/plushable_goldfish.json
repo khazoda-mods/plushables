@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/heart_of_gold",
+  "criteria": {
+    "plushable_goldfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_goldfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_goldfish"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_goldfish"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_goldfish"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_goldfish"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_owl",
+  "criteria": {
+    "plushable_hamster": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_hamster"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_hamster"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_hamster"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_hamster"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_hamster"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

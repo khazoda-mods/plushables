@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_animatronic",
+  "criteria": {
+    "plushable_moobloom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_moobloom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_moobloom"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_moobloom"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_moobloom"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_moobloom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

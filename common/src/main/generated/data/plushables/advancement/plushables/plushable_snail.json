@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_octoplushable",
+  "criteria": {
+    "plushable_snail": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_snail"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_snail"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_snail"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_snail"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_snail"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

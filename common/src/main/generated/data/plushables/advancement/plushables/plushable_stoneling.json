@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_kweebec",
+  "criteria": {
+    "plushable_stoneling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_stoneling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_stoneling"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_stoneling"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_stoneling"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_stoneling"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

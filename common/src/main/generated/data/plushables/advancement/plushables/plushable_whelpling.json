@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/heart_of_gold",
+  "criteria": {
+    "plushable_whelpling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_whelpling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_whelpling"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_whelpling"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_whelpling"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_whelpling"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

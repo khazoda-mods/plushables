@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_rupert",
+  "criteria": {
+    "plushable_dragon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_dragon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_dragon"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_dragon"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_dragon"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_dragon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

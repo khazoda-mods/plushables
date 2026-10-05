@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_creaky",
+  "criteria": {
+    "plushable_kweebec": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_kweebec"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_kweebec"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_kweebec"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_kweebec"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_kweebec"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

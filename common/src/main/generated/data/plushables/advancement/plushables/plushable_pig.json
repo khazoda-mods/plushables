@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_clucky",
+  "criteria": {
+    "plushable_pig": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_pig"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_pig"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_pig"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_pig"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_pig"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_rattiam",
+  "criteria": {
+    "plushable_triceratops": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_triceratops"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_triceratops"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_triceratops"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_triceratops"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_triceratops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

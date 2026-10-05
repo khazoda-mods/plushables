@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_cooper",
+  "criteria": {
+    "plushable_ziggy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_ziggy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_ziggy"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_ziggy"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_ziggy"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_ziggy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

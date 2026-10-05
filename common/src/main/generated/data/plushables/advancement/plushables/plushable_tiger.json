@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_mammoth",
+  "criteria": {
+    "plushable_tiger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_tiger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_tiger"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_tiger"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_tiger"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_tiger"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

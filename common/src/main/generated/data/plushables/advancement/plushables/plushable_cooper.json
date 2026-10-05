@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_wisp",
+  "criteria": {
+    "plushable_cooper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_cooper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_cooper"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_cooper"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_cooper"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_cooper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_big_tater",
+  "criteria": {
+    "plushable_big_irritater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_big_irritater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_big_irritater"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_big_irritater"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_big_irritater"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_big_irritater"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

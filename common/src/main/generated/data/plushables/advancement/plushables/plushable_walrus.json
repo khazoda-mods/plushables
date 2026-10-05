@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_tiger",
+  "criteria": {
+    "plushable_walrus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_walrus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_walrus"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_walrus"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_walrus"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_walrus"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

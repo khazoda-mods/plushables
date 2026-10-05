@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_hamster",
+  "criteria": {
+    "plushable_dormouse": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_dormouse"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_dormouse"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_dormouse"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_dormouse"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_dormouse"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

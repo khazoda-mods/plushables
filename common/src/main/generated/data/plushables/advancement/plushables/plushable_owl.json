@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_froge",
+  "criteria": {
+    "plushable_owl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_owl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_owl"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_owl"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_owl"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_owl"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

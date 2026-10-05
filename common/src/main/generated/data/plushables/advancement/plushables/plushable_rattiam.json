@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_djungelskog",
+  "criteria": {
+    "plushable_rattiam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_rattiam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_rattiam"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_rattiam"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_rattiam"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_rattiam"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_beaux",
+  "criteria": {
+    "plushable_goblin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_goblin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_goblin"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_goblin"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_goblin"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_goblin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

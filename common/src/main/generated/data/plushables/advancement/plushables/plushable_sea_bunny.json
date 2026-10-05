@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_dormouse",
+  "criteria": {
+    "plushable_sea_bunny": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_sea_bunny"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_sea_bunny"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_sea_bunny"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_sea_bunny"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_sea_bunny"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

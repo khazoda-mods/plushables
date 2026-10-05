@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_goblin",
+  "criteria": {
+    "plushable_big_tater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_big_tater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_big_tater"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_big_tater"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_big_tater"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_big_tater"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

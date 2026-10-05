@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_snail",
+  "criteria": {
+    "plushable_whale": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_whale"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_whale"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_whale"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_whale"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_whale"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

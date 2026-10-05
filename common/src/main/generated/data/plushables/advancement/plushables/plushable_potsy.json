@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_ziggy",
+  "criteria": {
+    "plushable_potsy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_potsy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_potsy"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_potsy"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_potsy"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_potsy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

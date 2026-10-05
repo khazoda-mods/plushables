@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_whelpling",
+  "criteria": {
+    "plushable_raptor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_raptor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_raptor"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_raptor"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_raptor"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_raptor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

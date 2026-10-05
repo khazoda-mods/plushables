@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_dragon",
+  "criteria": {
+    "plushable_wizard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_wizard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_wizard"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_wizard"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_wizard"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_wizard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

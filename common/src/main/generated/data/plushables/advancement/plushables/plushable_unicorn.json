@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_triceratops",
+  "criteria": {
+    "plushable_unicorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_unicorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_unicorn"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_unicorn"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_unicorn"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_unicorn"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

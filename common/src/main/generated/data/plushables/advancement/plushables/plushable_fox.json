@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_froglin",
+  "criteria": {
+    "plushable_fox": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_fox"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_fox"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_fox"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_fox"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_fox"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plushables:plushables/plushable_truffles",
+  "criteria": {
+    "plushable_djungelskog": {
+      "conditions": {
+        "items": [
+          {
+            "items": "plushables:plushable_djungelskog"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.plushables.collect.description",
+      "with": [
+        {
+          "translate": "block.plushables.plushable_djungelskog"
+        }
+      ]
+    },
+    "icon": {
+      "id": "plushables:plushable_djungelskog"
+    },
+    "title": {
+      "translate": "block.plushables.plushable_djungelskog"
+    }
+  },
+  "requirements": [
+    [
+      "plushable_djungelskog"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

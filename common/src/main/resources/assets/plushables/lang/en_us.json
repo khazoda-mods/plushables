@@ -63,8 +63,7 @@
   "advancements.plushables.root.description": "Find an ingredient for a Heart of Gold.",
   "advancements.plushables.heart_of_gold.title": "Heart of Gold",
   "advancements.plushables.heart_of_gold.description": "The foundation of every plushable.",
-  "advancements.plushables.collection.title": "#%s - #%s",
-  "advancements.plushables.collection.description": "Collect plushables %s through %s.",
+  "advancements.plushables.collect.description": "Collect %s.",
   "config.plushables.enable_storage_system": "Plushable Storage",
   "config.plushables.enable_stored_tnt_explosions": "Stored TNT Explosions",
   "config.plushables.enable_loot_table_population": "Vanilla Loot Table Population"
